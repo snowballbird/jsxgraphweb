@@ -5,12 +5,12 @@
 
 # If you are building a simple GitHub user page (username.github.io) then use these settings:
 #url: "http://jsxgraph.uni-bayreuth.de"
-url: "https://snowballbird.github.io/jsxgraphweb/"
-baseurl: "/wp"
+#url: "https://snowballbird.github.io/jsxgraphweb/"
+#baseurl: "/wp"
 
 # If you are building a GitHub project page then use these settings:
-#url: "http://username.github.io/projectname"
-#baseurl: "/projectname"
+url: "http://snowballbird.github.io/jsxgraphweb/"
+baseurl: "/jsxgraphweb"
 
 # Of course don't forget to change the username and projectname to YOUR username and project
 
