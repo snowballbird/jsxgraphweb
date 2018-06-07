@@ -5,7 +5,7 @@
 
 # If you are building a simple GitHub user page (username.github.io) then use these settings:
 #url: "http://jsxgraph.uni-bayreuth.de"
-url: "https://jsxgraph.org"
+url: "https://snowballbird.github.io/jsxgraphweb/"
 baseurl: "/wp"
 
 # If you are building a GitHub project page then use these settings:
