@@ -24,7 +24,7 @@
           {% endif %}
 
         {% if internal %}
-          {% capture linkurl %}{{ site.baseurl }}/{{ link[1] }}{% endcapture %}
+          {% capture linkurl %}{{ site.url }}/{{ link[1] }}{% endcapture %}
         {% else %}
           {% capture linkurl %}{{ link[1] }}{% endcapture %}
         {% endif %}
@@ -39,7 +39,7 @@
 	<div class="avatar-container">
 	  <div class="avatar-img-border">
 	    <a href="/">
-	      <img class="avatar-img" src="{{ site.avatar | prepend: site.baseurl | replace: '//', '/' }}" />
+	      <img class="avatar-img" src="{{ site.avatar | prepend: site.url | replace: '//', '/' }}" />
 		</a>
 	  </div>
 	</div>
