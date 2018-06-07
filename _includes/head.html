@@ -80,7 +80,7 @@
   {% if page.fb-img %}
   <meta property="og:image" content="{{ page.fb-img }}" />
   {% elsif site.avatar %}
-  <meta property="og:image" content="{{ site.url }}{{ site.avatar }}" />
+  <meta property="og:image" content="{{ site.url | add : '/jsxgraph' }}{{ site.avatar }}" />
   {% else %}
   <meta property="og:image" content="" />
   {% endif %}
