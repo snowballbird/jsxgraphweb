@@ -39,7 +39,7 @@
 
   {% if layout.common-css %}
     {% for css in layout.common-css %}
-      <link rel="stylesheet" href="{{ css | prepend: site.baseurl | replace: '//', '/' }}" />
+      <link rel="stylesheet" href="{{ css | prepend: site.url | replace: '//', '/' }}" />
     {% endfor %}
   {% endif %}
 
@@ -57,7 +57,7 @@
 
   {% if layout.css %}
     {% for css in layout.css %}
-      <link rel="stylesheet" href="{{ css | prepend: site.baseurl | replace: '//', '/' }}" />
+      <link rel="stylesheet" href="{{ css | prepend: site.url | replace: '//', '/' }}" />
     {% endfor %}
   {% endif %}
 
@@ -80,7 +80,7 @@
   {% if page.fb-img %}
   <meta property="og:image" content="{{ page.fb-img }}" />
   {% elsif site.avatar %}
-  <meta property="og:image" content="{{ site.url | add : '/jsxgraph' }}{{ site.avatar }}" />
+  <meta property="og:image" content="{{ site.url }}{{ site.avatar }}" />
   {% else %}
   <meta property="og:image" content="" />
   {% endif %}
