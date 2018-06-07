@@ -41,14 +41,12 @@ Download the latest version (v0.99.6) from the JSXGraph home page:
 The latest development version can always be downloaded/used from <//jsxgraph.uni-bayreuth.de/~michael/jsxgraph-nightly/>.
 Beware, there may be untested features (bugs)!
 
-### Previous releases
-
-<a href="previousreleases/">Here are links to older versions of JSXGraph.</a>
-
 ### Source code
 
 * The JSXGraph source code is hosted on [GitHub](https://github.com/jsxgraph/jsxgraph)
 * [Bug tracker](https://github.com/jsxgraph/jsxgraph/issues)
 * **JetBrains WebStorm**: JetBrains supports the development of JSXGraph with free licenses under their Open Source Support Program.
 
+### Previous releases
 
+<a href="previousreleases/">Here are links to older versions of JSXGraph.</a>
