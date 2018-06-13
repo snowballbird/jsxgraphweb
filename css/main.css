@@ -443,26 +443,3 @@ header.header-post .post-heading .post-subheading {
     border-color: #DDDDDD;
     background-color: #f5f5f5;
 }
-
-.card-group {
-  width: initial; }
-  .card-group .card {
-    text-align: center;
-    height: 270px;
-    padding: 15px; }
-    @media (max-width: 990px) {
-      .card-group .card {
-        height: auto; } }
-    .card-group .card .card-block {
-      /*background-color: #eceef1;
-      border-radius: 8px;*/
-      height: 100%;
-      padding: 20px; }
-      .card-group .card .card-block .fa {
-        margin-top: 20px;
-        font-size: 58px; }
-      .card-group .card .card-block .card-title {
-        margin-bottom: 2px; }
-      .card-group .card .card-block .card-text {
-        margin-top: 0px;
-        font-size: 19px; }
