@@ -99,6 +99,7 @@ var g2 = brd.create('functiongraph', [JXG.Math.Numerics.D(pol), -10, 10],
 ```
 </div>
 
+<script type='text/javascript'>
 function myFunction() {
     var x = document.getElementById("myDIV");
     if (x.style.display === "none") {
@@ -107,7 +108,7 @@ function myFunction() {
         x.style.display = "none";
     }
 }
-
+</script>
 ### Team
 
 JSXGraph has started as a seminar at the <a href="//www.uni-bayreuth.de">University of Bayreuth</a>.
