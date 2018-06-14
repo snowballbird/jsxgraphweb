@@ -55,7 +55,8 @@ First impressions (the points **A,B,C,D,E** can be dragged):
 </script>
 
 This is the source code for the above construction:
-<button onclick="myFunction()">Click Me</button>
+
+<button onclick="myFunction()">Show/hide code</button>
 <div id="myDIV">
 ```html
 <html>
@@ -102,10 +103,10 @@ var g2 = brd.create('functiongraph', [JXG.Math.Numerics.D(pol), -10, 10],
 <script type='text/javascript'>
 function myFunction() {
     var x = document.getElementById("myDIV");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
+    if (x.style.display === "block") {
         x.style.display = "none";
+    } else {
+        x.style.display = "block";
     }
 }
 </script>
