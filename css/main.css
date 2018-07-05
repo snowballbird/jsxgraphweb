@@ -446,4 +446,8 @@ header.header-post .post-heading .post-subheading {
 
 .is--hidden {
     display: none;
-} 
+}
+
+.icon {
+  padding: 10px;
+}
