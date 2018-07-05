@@ -451,3 +451,8 @@ header.header-post .post-heading .post-subheading {
 .icon {
   padding: 10px;
 }
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
