@@ -23,3 +23,7 @@ All objects of JSXGraph use the namespace `JXG`. Beside `JXG` there are no globa
 
 #### Discussion of development and future direction of JSXGraph
 * The [JSXGraph forum at Google groups](https://groups.google.com/forum/#!forum/jsxgraph) is the place to discuss feature requests and the future of JSXGraph
+
+### [JSXCompressor](jsxcompressor/index.html)
+#### unzip/gunzip/deflate with JavaScript
+*open source library for delivering compressed JavaScript inside of an HTML file
