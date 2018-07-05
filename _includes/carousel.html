@@ -5,7 +5,7 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
-    {% for feature in page.features %}
+    {% for feature in test.features %}
       {% if forloop.index == 1 %} <div class="carousel-item active" style="background:url('{{feature.img}}')"> {% else %} <div class="carousel-item" style="background:url('{{feature.img}}')"> {% endif %}
         <div class="backdrop"></div>
         <div class="container">
