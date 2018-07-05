@@ -55,8 +55,7 @@ First impressions (the points **A,B,C,D,E** can be dragged):
 </script>
 
 This is the source code for the above construction:
-<button onclick="myFunction()">Show/hide code</button>
-<div id="myDIV">
+
 ```html
 <html>
 <head>
@@ -97,18 +96,8 @@ var g2 = brd.create('functiongraph', [JXG.Math.Numerics.D(pol), -10, 10],
 </body>
 </html>
 ```
-</div>
 
-<script type='text/javascript'>
-function myFunction() {
-    var x = document.getElementById("myDIV");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
-</script>
+
 ### Team
 
 JSXGraph has started as a seminar at the <a href="//www.uni-bayreuth.de">University of Bayreuth</a>.
