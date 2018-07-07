@@ -33,9 +33,9 @@ navbar-links:
   Examples: "about/index.html"
   Download: "download/index.html"
   Docs: "docs/index.html"
-  Blog: "blog/index.html"
   References: "ref/index.html"
-  #JSXCompressor: "jsxcompressor/index.html"
+  Blog: "blog/index.html"
+    #JSXCompressor: "jsxcompressor/index.html"
 
 # --- Footer options --- #
 
