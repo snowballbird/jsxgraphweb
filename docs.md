@@ -3,7 +3,7 @@ layout: page
 title: Docs
 subtitle: Dynamic Mathematics with JavaScript
 ---
-### API reference and examples
+## API reference and examples
 
 * [API reference](/docs/index.html)
 * [First steps with many examples](/wiki/index.php/Documentation)
@@ -14,7 +14,7 @@ subtitle: Dynamic Mathematics with JavaScript
 
 All objects of JSXGraph use the namespace `JXG`. Beside `JXG` there are no global variables.
 
-### Support
+## Support
 
 #### Coding help
 * [stackoverflow.com](https://stackoverflow.com/search?tab=newest&q=jsxgraph) is the place where you get help with your JSXGraph code.
@@ -25,6 +25,6 @@ All objects of JSXGraph use the namespace `JXG`. Beside `JXG` there are no globa
 * The [JSXGraph forum at Google groups](https://groups.google.com/forum/#!forum/jsxgraph) is the place to discuss feature requests and the future of JSXGraph
 
 
-### [JSXCompressor](jsxcompressor/index.html)
-*unzip/gunzip/deflate with JavaScript
-*open source library for delivering compressed JavaScript inside of an HTML file
+## [JSXCompressor](jsxcompressor/index.html)
+* unzip/gunzip/deflate with JavaScript
+* open source library for delivering compressed JavaScript inside of an HTML file
