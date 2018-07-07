@@ -25,8 +25,7 @@ The latest JSXGraph version hosted on **cdnjs** is:
 * <https://cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.6/jsxgraph.css>
 
 ### JSXGraph site
-Download the latest version (v0.99.6) from the JSXGraph home page:
-* <https://jsxgraph.org/distrib/jsxgraphcore.js>.
+Download the latest version (v0.99.6) from the [JSXGraph home page](https://jsxgraph.org/distrib/jsxgraphcore.js)
 
 
 ### Plug-ins
@@ -36,16 +35,18 @@ Download the latest version (v0.99.6) from the JSXGraph home page:
 * [JSXGraph plug-in for WordPress](http://wordpress.org/extend/plugins/jsxgraph){:target="_blank"}
 * [JSXGraph plug-in for Drupal](http://drupal.org/project/jsxgraph){:target="_blank"}
 
-### Nightly builds
-
-The latest development version can always be downloaded/used from <https://jsxgraph.uni-bayreuth.de/~michael/jsxgraph-nightly/>.
-Beware, there may be untested features (bugs)!
-
 ### Source code
 
 * The JSXGraph source code is hosted on [GitHub](https://github.com/jsxgraph/jsxgraph)
 * [Bug tracker](https://github.com/jsxgraph/jsxgraph/issues)
 * **[JetBrains WebStorm](https://www.jetbrains.com/webstorm/)**: JetBrains supports the development of JSXGraph with free licenses under their Open Source Support Program.
+
+### Nightly builds
+
+The latest development version can always be downloaded/used from <https://jsxgraph.uni-bayreuth.de/~michael/jsxgraph-nightly/>.
+Beware, there may be untested features (bugs)!
+
+
 
 ### Previous releases
 
