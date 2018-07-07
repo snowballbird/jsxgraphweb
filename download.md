@@ -31,9 +31,9 @@ Download the latest version (v0.99.6) from the JSXGraph home page:
 
 ### Plug-ins
 * [JSXGraph plug-in for Moodle](https://github.com/jsxgraph/moodle-jsxgraph-plugin)
-* [Online script to create JSXGraph HTML pages from GEONExT files](http://did.mat.uni-bayreuth.de/~matthias/jsxgraph/creator/" target="_blank")
-* [JSXGraph MediaWiki extension](http://www.mediawiki.org/wiki/Extension:JSXGraph" target="_blank")
-* [JSXGraph plug-in for WordPress](http://wordpress.org/extend/plugins/jsxgraph/" target="_blank")
+* <a href="http://did.mat.uni-bayreuth.de/~matthias/jsxgraph/creator/" target="_blank">Online script to create JSXGraph HTML pages from GEONExT files</a>
+* <a href="http://www.mediawiki.org/wiki/Extension:JSXGraph" target="_blank">JSXGraph MediaWiki extension</a>
+* <a href="http://wordpress.org/extend/plugins/jsxgraph/" target="_blank">JSXGraph plug-in for WordPress</a>
 * [JSXGraph plug-in for Drupal](http://drupal.org/project/jsxgraph)
 
 ### Nightly builds
@@ -45,7 +45,7 @@ Beware, there may be untested features (bugs)!
 
 * The JSXGraph source code is hosted on [GitHub](https://github.com/jsxgraph/jsxgraph)
 * [Bug tracker](https://github.com/jsxgraph/jsxgraph/issues)
-* **JetBrains WebStorm**: JetBrains supports the development of JSXGraph with free licenses under their Open Source Support Program.
+* **[JetBrains WebStorm](https://www.jetbrains.com/webstorm/)**: JetBrains supports the development of JSXGraph with free licenses under their Open Source Support Program.
 
 ### Previous releases
 
