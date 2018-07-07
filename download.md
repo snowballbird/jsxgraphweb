@@ -38,7 +38,7 @@ Download the latest version (v0.99.6) from the JSXGraph home page:
 
 ### Nightly builds
 
-The latest development version can always be downloaded/used from <//jsxgraph.uni-bayreuth.de/~michael/jsxgraph-nightly/>.
+The latest development version can always be downloaded/used from <https://jsxgraph.uni-bayreuth.de/~michael/jsxgraph-nightly/>.
 Beware, there may be untested features (bugs)!
 
 ### Source code
