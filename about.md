@@ -98,6 +98,7 @@ var g2 = brd.create('functiongraph', [JXG.Math.Numerics.D(pol), -10, 10],
 ```
 ---
 </div>
+<script type='text/javascript'>
 function hideshow() {
     var x = document.getElementById("examplecode");
     if (x.style.display === "none") {
@@ -106,4 +107,5 @@ function hideshow() {
         x.style.display = "none";
     }
 }
+</script>
 {% include carousel.html %}
