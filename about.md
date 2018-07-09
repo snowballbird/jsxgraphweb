@@ -53,9 +53,9 @@ First impressions (the points **A,B,C,D,E** can be dragged):
 
 })();
 </script>
-
+<button onclick="hideshow()">Show Code</button>
 This is the source code for the above construction:
-
+<div id="examplecode">
 ```html
 <html>
 <head>
@@ -96,5 +96,14 @@ var g2 = brd.create('functiongraph', [JXG.Math.Numerics.D(pol), -10, 10],
 </body>
 </html>
 ```
+</div>
+function hideshow() {
+    var x = document.getElementById("examplecode");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
 ---
 {% include carousel.html %}
