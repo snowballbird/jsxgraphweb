@@ -56,44 +56,7 @@ First impressions (the points **A,B,C,D,E** can be dragged):
 <button onclick="hideshow()">Show Code</button>
 This is the source code for the above construction:
 <div id="examplecode">
-&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;Example&lt;/title&gt;
-  &lt;script type="text/javascript" charset="UTF-8"
-   src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.3/jsxgraphcore.js"&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div id="box" class="jxgbox" style="width:500px; height:500px;"&gt;&lt;/div&gt;
-&lt;script type="text/javascript"&gt;
-var addRandPoint = function(x) {
-  p.push(brd.create('point',
-              [x,(Math.random()-0.5)*3],{style:6}));
-  brd.update();
-};
-
-// Init board
-var brd = JXG.JSXGraph.initBoard('box',
-            {axis:true, boundingbox:[-5, 10, 5, -10]});
-
-// Create points
-var p = [];
-p[0] = brd.create('point', [-4,2], {style:6});
-p[1] = brd.create('point', [3,-1], {style:6});
-addRandPoint(-2);
-addRandPoint(0.5);
-addRandPoint(1);
-
-// Draw function graph
-var pol = JXG.Math.Numerics.lagrangePolynomial(p);
-var g = brd.create('functiongraph', [pol, -10, 10], {strokeWidth:1});
-
-// Draw derivative
-var g2 = brd.create('functiongraph', [JXG.Math.Numerics.D(pol), -10, 10],
-           {dash:3, strokeWidth:1, strokeColor:'#ff0000'});
-
-&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<script src="https://gist.github.com/snowballbird/56e50dc6c690821948956d18ae04e8fd.js"></script>
 </div>
 <script type='text/javascript'>
 function hideshow() {
