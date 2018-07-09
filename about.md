@@ -56,16 +56,15 @@ First impressions (the points **A,B,C,D,E** can be dragged):
 <button onclick="hideshow()">Show Code</button>
 This is the source code for the above construction:
 <div id="examplecode">
-```html
-<html>
-<head>
-  <title>Example</title>
-  <script type="text/javascript" charset="UTF-8"
-   src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.3/jsxgraphcore.js"></script>
-</head>
-<body>
-<div id="box" class="jxgbox" style="width:500px; height:500px;"></div>
-<script type="text/javascript">
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Example&lt;/title&gt;
+  &lt;script type="text/javascript" charset="UTF-8"
+   src="//cdnjs.cloudflare.com/ajax/libs/jsxgraph/0.99.3/jsxgraphcore.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="box" class="jxgbox" style="width:500px; height:500px;"&gt;&lt;/div&gt;
+&lt;script type="text/javascript"&gt;
 var addRandPoint = function(x) {
   p.push(brd.create('point',
               [x,(Math.random()-0.5)*3],{style:6}));
@@ -92,11 +91,9 @@ var g = brd.create('functiongraph', [pol, -10, 10], {strokeWidth:1});
 var g2 = brd.create('functiongraph', [JXG.Math.Numerics.D(pol), -10, 10],
            {dash:3, strokeWidth:1, strokeColor:'#ff0000'});
 
-</script>
-</body>
-</html>
-```
----
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </div>
 <script type='text/javascript'>
 function hideshow() {
