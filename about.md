@@ -55,7 +55,7 @@ First impressions (the points **A,B,C,D,E** can be dragged):
 </script>
 <button onclick="hideshow()">Show Code</button>
 <br>
-<div id="examplecode">
+<div id="examplecode" style="display:none">
 This is the source code for the above construction:
 <script src="https://gist.github.com/snowballbird/56e50dc6c690821948956d18ae04e8fd.js"></script>
 </div>
