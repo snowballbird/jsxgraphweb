@@ -47,12 +47,12 @@
       <div class="item active">
         <div>
         <div class="myitem">
-        	<div id='box1' class='jxgbox' style='width:95%; height:auto; margin:auto; margin-top: 20px;'></div>
+        	<div id='box1' class="jxgbox" style="width:95%; height:auto; margin:auto;"></div>
         </div>
 
         <div class="noheight">
           <h1>{{ page.title1 }}</h1>
-          <button onclick="hideshow()">Show / Hide Code</button>
+          <button onclick="hideshow1()">Show / Hide Code</button>
           <br>
           <div id="examplecode1" class="noheight" style="display:none">
 {% highlight js %}
@@ -97,7 +97,7 @@ brd.unsuspendUpdate();
 
           </div>
           <script type='text/javascript'>
-          function hideshow() {
+          function hideshow1() {
               var x = document.getElementById("examplecode1");
               if (x.style.display === "none") {
                   x.style.display = "block";
@@ -114,13 +114,13 @@ brd.unsuspendUpdate();
       <div class="item">
         <div>
         <div class="myitem">
-          <div id='box2' class='jxgbox' style='width:95%; height:auto; margin:auto; margin-top: 20px;'></div>
+          <div id='box2' class='jxgbox' style='width:95%; height:auto; margin:auto;'></div>
         </div>
 
         <div class="noheight">
           <form><input type="button" value="Next iteration" onclick="run();"></form>
           <h1>{{ page.title2 }}</h1>
-          <button onclick="hideshow()">Show / Hide Code</button>
+          <button onclick="hideshow2()">Show / Hide Code</button>
           <br>
           <div id="examplecode2" class="noheight" style="display:none">
       {% highlight js %}
@@ -185,7 +185,7 @@ brd.unsuspendUpdate();
 
           </div>
           <script type='text/javascript'>
-          function hideshow() {
+          function hideshow2() {
               var x = document.getElementById("examplecode2");
               if (x.style.display === "none") {
                   x.style.display = "block";
