@@ -8,6 +8,7 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
   <!-- Wrapper for slides -->
     <div class="carousel-inner">
+      
     {% for feature in page.features %}
       {% if forloop.index == 1 %} <div class="carousel-item active"> {% else %} <div class="carousel-item"> {% endif %}
         <div>
@@ -55,7 +56,10 @@
     </a>
 </div>
 <script type="text/javascript">
-{{ feature.code }}
+{% include example1.js %}
+</script>
+<script type="text/javascript">
+{% include example2.js %}
 </script>
 </div>
 
