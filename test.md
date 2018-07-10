@@ -20,4 +20,4 @@ features:
 {% include example2.js %}
 </script>
 
-{% include carousel2.html %}
+{% include carousel.html %}
