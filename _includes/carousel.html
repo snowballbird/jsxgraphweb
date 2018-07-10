@@ -198,64 +198,7 @@ brd.unsuspendUpdate();
 
       </div>
       </div>
-
-      <div class="item">
-        <div>
-        <div class="myitem">
-          <div id='box3' class='jxgbox' style='width:95%; height:500px; margin:auto;'></div>
-        </div>
-
-        <div class="noheight">
-          <h1>{{ page.title3 }}</h1>
-          <button onclick="hideshow3()">Show / Hide Code</button>
-          <br>
-          <div id="examplecode3" class="noheight" style="display:none">
-      {% highlight js %}
-      (function(){
-          var addPoint = function(x) {
-            p.push(brd.create('point',
-                        [x, (Math.random() - 0.5) * 3], {style:6}));
-            brd.update();
-          };
-
-          var brd = JXG.JSXGraph.initBoard('box3',
-                     {axis:true, boundingbox:[-5, 10, 5, -10]});
-          var p = [];
-          p[0] = brd.create('point', [-4,2], {style:6});
-          p[1] = brd.create('point', [3,-1], {style:6});
-          addPoint(-2);
-          addPoint(0.5);
-          addPoint(1);
-          var pol = JXG.Math.Numerics.lagrangePolynomial(p);
-          var g = brd.create('functiongraph', [pol, -10, 10], {strokeWidth:1});
-          var g2 = brd.create('functiongraph', [JXG.Math.Numerics.D(pol), -10, 10],
-                     {dash:3, strokeWidth:1, strokeColor:'#ff0000'});
-
-      })();
-
-      {% endhighlight %}
-      </div>
-
-          <script type='text/javascript'>
-          function hideshow3() {
-              var x = document.getElementById("examplecode3");
-              if (x.style.display === "none") {
-                  x.style.display = "block";
-              } else {
-                  x.style.display = "none";
-              }
-          }
-          </script>
-        </div>
-      </div>
-      </div>
-
-
-
     </div>
-
-
-
 
   <!-- Left and right controls -->
   <a class="carousel-control left" style="background-image: none; height:300px;" href="#myCarousel" data-slide="prev">
@@ -374,29 +317,4 @@ board = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.02
          drawTriangle(a3, b3, c3, level);
      }
      paint();
-</script>
-
-<script type="text/javascript">
-
-(function(){
-    var addPoint = function(x) {
-      p.push(brd.create('point',
-                  [x, (Math.random() - 0.5) * 3], {style:6}));
-      brd.update();
-    };
-
-    var brd = JXG.JSXGraph.initBoard('box3',
-               {axis:true, boundingbox:[-5, 10, 5, -10]});
-    var p = [];
-    p[0] = brd.create('point', [-4,2], {style:6});
-    p[1] = brd.create('point', [3,-1], {style:6});
-    addPoint(-2);
-    addPoint(0.5);
-    addPoint(1);
-    var pol = JXG.Math.Numerics.lagrangePolynomial(p);
-    var g = brd.create('functiongraph', [pol, -10, 10], {strokeWidth:1});
-    var g2 = brd.create('functiongraph', [JXG.Math.Numerics.D(pol), -10, 10],
-               {dash:3, strokeWidth:1, strokeColor:'#ff0000'});
-
-})();
 </script>
