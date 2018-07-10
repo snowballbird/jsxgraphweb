@@ -6,8 +6,7 @@ subtitle:  Dynamic Mathematics with JavaScript
 features:
  - title: Infinity
    box: box1
-   code: <script type='text/javascript'>
-   var brd = JXG.JSXGraph.initBoard('box1', {boundingbox: [-6, 6, 10, -8]});
+   code:    var brd = JXG.JSXGraph.initBoard('box1', {boundingbox: [-6, 6, 10, -8]});
    brd.suspendUpdate();
    var S = brd.create('slider', [[-5,-6],[5,-6],[0,0.95,1]], {name:'S'});
    var hue = brd.create('slider', [[-5,-7],[5,-7],[0,8,36]], {name:'color'});
@@ -44,12 +43,11 @@ features:
       }
    quadrangle(points,30);
    brd.unsuspendUpdate();
-   </script>
+
 
  - title: Sierpinski triangle
    box: box2
-   code: <script type='text/javascript'>
-        board = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
+   code:   board = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
 
         var level = 0;
         function run() {
@@ -106,7 +104,7 @@ features:
             drawTriangle(a3, b3, c3, level);
         }
         paint();
-   </script>
+
 
 ---
 
