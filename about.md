@@ -69,4 +69,3 @@ function hideshow() {
     }
 }
 </script>
-{% include carousel.html %}
