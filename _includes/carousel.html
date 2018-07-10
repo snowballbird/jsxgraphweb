@@ -46,13 +46,13 @@
       <div class="item active">
         <div>
         <div class="myitem">
-        	<div id='box2' class='jxgbox' style='width:320px; height:320px;'></div>
+        	<div id='box2' class='jxgbox' style='width:320px; height:320px; margin: auto;'></div>
         </div>
-        <div style="width:100%; background-color: red; margin-top: 20px;">
+        <div class="myitem">
+          <h1>{{feature.title}}</h1>
           <button onclick="hideshow()">Show Code</button>
           <br>
           <div id="examplecode" style="display:none">
-          This is the source code for the above construction:
           <script src="https://gist.github.com/snowballbird/56e50dc6c690821948956d18ae04e8fd.js"></script>
           </div>
           <script type='text/javascript'>
@@ -85,7 +85,7 @@
     </div>
 
   <!-- Left and right controls -->
-  <a class="carousel-control left" style="background-image: none" href="#myCarousel" data-slide="prev">
+  <a class="carousel-control left" style="background-image: none; height:500px;" href="#myCarousel" data-slide="prev">
             <span class="fa fa-arrow-left f3-3x" style="margin-top: 100px;"></span>
     </a>
   <a class="carousel-control right" style="background-image: none" href="#myCarousel" data-slide="next">
