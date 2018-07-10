@@ -47,14 +47,14 @@
       <div class="item active">
         <div>
         <div class="myitem">
-        	<div id='box1' class='jxgbox' style='width:450px; height:450px; margin:auto;'></div>
+        	<div id='box1' class='jxgbox' style='width:95%; height:auto; margin:auto; margin-top: 20px;'></div>
         </div>
 
         <div class="noheight">
           <h1>{{ page.title1 }}</h1>
           <button onclick="hideshow()">Show / Hide Code</button>
           <br>
-          <div id="examplecode" class="noheight" style="display:none">
+          <div id="examplecode1" class="noheight" style="display:none">
 {% highlight js %}
 var brd = JXG.JSXGraph.initBoard('jxgbox', {boundingbox: [-6, 6, 10, -8]});
 brd.suspendUpdate();
@@ -98,7 +98,7 @@ brd.unsuspendUpdate();
           </div>
           <script type='text/javascript'>
           function hideshow() {
-              var x = document.getElementById("examplecode");
+              var x = document.getElementById("examplecode1");
               if (x.style.display === "none") {
                   x.style.display = "block";
               } else {
@@ -114,7 +114,7 @@ brd.unsuspendUpdate();
       <div class="item">
         <div>
         <div class="myitem">
-          <div id='box2' class='jxgbox' style='width:450px; height:350px; margin:auto;'></div>
+          <div id='box2' class='jxgbox' style='width:95%; height:auto; margin:auto; margin-top: 20px;'></div>
         </div>
 
         <div class="noheight">
@@ -122,11 +122,11 @@ brd.unsuspendUpdate();
           <h1>{{ page.title2 }}</h1>
           <button onclick="hideshow()">Show / Hide Code</button>
           <br>
-          <div id="examplecode" class="noheight" style="display:none">
+          <div id="examplecode2" class="noheight" style="display:none">
       {% highlight js %}
       board = JXG.JSXGraph.initBoard('box', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
 
-       var level = 3;
+       var level = 0;
        function run() {
            JXG.JSXGraph.freeBoard(board);
            board = JXG.JSXGraph.initBoard('box', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
@@ -186,7 +186,7 @@ brd.unsuspendUpdate();
           </div>
           <script type='text/javascript'>
           function hideshow() {
-              var x = document.getElementById("examplecode");
+              var x = document.getElementById("examplecode2");
               if (x.style.display === "none") {
                   x.style.display = "block";
               } else {
@@ -256,7 +256,7 @@ brd.unsuspendUpdate();
 <script type='text/javascript'>
 board = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
 
-     var level = 3;
+     var level = 0;
      function run() {
          JXG.JSXGraph.freeBoard(board);
          board = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
