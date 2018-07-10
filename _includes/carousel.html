@@ -44,9 +44,30 @@
   <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
+        <div>
         <div style="height: 500px; width:100%; background-color: red;">
         	<h1>Test</h1>
         </div>
+        <div style="width:100%; background-color: red;">
+          <button onclick="hideshow()">Show Code</button>
+          <br>
+          <div id="examplecode" style="display:none">
+          This is the source code for the above construction:
+          <script src="https://gist.github.com/snowballbird/56e50dc6c690821948956d18ae04e8fd.js"></script>
+          </div>
+          <script type='text/javascript'>
+          function hideshow() {
+              var x = document.getElementById("examplecode");
+              if (x.style.display === "none") {
+                  x.style.display = "block";
+              } else {
+                  x.style.display = "none";
+              }
+          }
+          </script>
+        </div>
+
+      </div>
       </div>
 
       <div class="item">
