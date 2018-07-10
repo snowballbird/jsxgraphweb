@@ -109,5 +109,5 @@ features:
    </script>
 
 ---
-{% include carousel.html %}
-{% include carousel.html %}
+
+{% include carousel2.html %}
