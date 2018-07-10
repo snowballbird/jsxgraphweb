@@ -46,14 +46,14 @@
       <div class="item active">
         <div>
         <div class="myitem">
-        	<div id='box' class='jxgbox' style='width:320px; height:220px; margin:auto;'></div>
+        	<div id='box' class='jxgbox' style='width:400px; height:400px; margin:auto;'></div>
         </div>
 
         <div class="noheight">
-          <h1>{{title1}}</h1>
+          <h1>{{ title1 }}</h1>
           <button onclick="hideshow()">Show / Hide Code</button>
           <br>
-          <div id="examplecode noheight" style="display:none">
+          <div id="examplecode" class="noheight" style="display:none">
 {% highlight js %}
         var addRandPoint = function(x) {
         p.push(brd.create('point',
