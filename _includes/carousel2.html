@@ -16,12 +16,12 @@
           </div>
 
           <div class="noheight">
-            <h1>{{ title }}</h1>
+            <h1>{{ feature.title }}</h1>
             <button onclick="hideshow()">Show / Hide Code</button>
             <br>
             <div id="examplecode" class="noheight" style="display:none">
           {% highlight js %}
-          { feature.code }
+          {{ feature.code }}
           {% endhighlight %}
             </div>
             <script type='text/javascript'>
@@ -55,7 +55,7 @@
     </a>
 </div>
 <script type="text/javascript">
-{feature.code}
+{{ feature.code }}
 </script>
 </div>
 
