@@ -16,4 +16,4 @@ features:
 
 ---
 
-{% include carousel2.html %}
+{% include carousel.html %}
