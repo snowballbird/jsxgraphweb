@@ -13,11 +13,5 @@ features:
 
 
 ---
-<script type="text/javascript">
-{% include example1.js %}
-</script>
-<script type="text/javascript">
-{% include example2.js %}
-</script>
 
 {% include carousel2.html %}

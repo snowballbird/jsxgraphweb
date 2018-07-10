@@ -8,7 +8,7 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
   <!-- Wrapper for slides -->
     <div class="carousel-inner">
-
+      
     {% for feature in page.features %}
       {% if forloop.index == 1 %} <div class="carousel-item active"> {% else %} <div class="carousel-item"> {% endif %}
         <div>
@@ -17,11 +17,10 @@
           </div>
 
           <div class="noheight">
-            <h1>test{{ feature.title }}</h1>
+            <h1>{{ feature.title }}</h1>
             <button onclick="hideshow()">Show / Hide Code</button>
             <br>
             <div id="examplecode" class="noheight" style="display:none">
-              <p>test</p>
           {% highlight js %}
           {{ feature.code }}
           {% endhighlight %}
@@ -56,4 +55,15 @@
     </span>
     </a>
 </div>
+<script type="text/javascript">
+{% include example1.js %}
+</script>
+<script type="text/javascript">
+{% include example2.js %}
+</script>
 </div>
+
+
+
+
+  <!-- Left and right controls -->
