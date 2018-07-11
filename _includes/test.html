@@ -4,9 +4,9 @@
   </div>
 
   <div class="noheight">
-    <form><input type="button" value="Next iteration" onclick="run();"></form>
+
      <a href="{{ page.link2 }}">
-    <h1>test</h1>
+    <h1>riemann</h1>
     </a>
     <button onclick="hideshow1()">Show / Hide Code</button>
     <br>
@@ -40,8 +40,9 @@ paint();
   </div>
 
   <div class="noheight">
+    <form><input type="button" value="Next iteration" onclick="run();"></form>
     <a href="{{ page.link2 }}">
-    <h1>test</h1>
+    <h1>dreiecke</h1>
     </a>
     <button onclick="hideshow2()">Show / Hide Code</button>
     <br>
@@ -69,10 +70,46 @@ paint();
 </div>
 
 
+<div>
+  <div class="myitem">
+    <div id='box2' class='jxgbox' style='width:95%; height:500px; margin:auto;'></div>
+  </div>
+
+  <div class="noheight">
+    <form><input type="button" value="Next iteration" onclick="run();"></form>
+    <a href="{{ page.link2 }}">
+    <h1>infinity</h1>
+    </a>
+    <button onclick="hideshow3()">Show / Hide Code</button>
+    <br>
+
+      <div id="examplecode3" class="noheight nopadding" style="display:none">
+{% highlight js %}
+board = JXG.JSXGraph.initBoard('box', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
+
+v
+paint();
+{% endhighlight %}
+
+      </div>
+      <script type='text/javascript'>
+      function hideshow3() {
+        var x = document.getElementById("examplecode3");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+      }
+      </script>
+    </div>
+</div>
+
+
 
 <!--Riemann-->
 <script type="text/javascript">
-var brd = JXG.JSXGraph.initBoard('box2', {axis:true, boundingbox: [-8, 4, 8, -4]});
+var brd = JXG.JSXGraph.initBoard('box1', {axis:true, boundingbox: [-8, 4, 8, -4]});
 var s = brd.create('slider',[[1,3],[5,3],[1,10,50]],{name:'n',snapWidth:1});
 var a = brd.create('slider',[[1,2],[5,2],[-10,-3,0]],{name:'start'});
 var b = brd.create('slider',[[1,1],[5,1],[0,Math.PI,10]],{name:'end'});
@@ -92,7 +129,7 @@ brd.create('text',[-6,-3,function(){ return 'Sum='+(JXG.Math.Numerics.riemannsum
 <!--Dreiecke-->
 
 <script type='text/javascript'>
-var brd = JXG.JSXGraph.initBoard('box1', {boundingbox: [-6, 6, 10, -8]});
+var brd = JXG.JSXGraph.initBoard('box2', {boundingbox: [-6, 6, 10, -8]});
 brd.suspendUpdate();
 var S = brd.create('slider', [[-5,-6],[5,-6],[0,0.95,1]], {name:'S'});
 var hue = brd.create('slider', [[-5,-7],[5,-7],[0,8,36]], {name:'color'});
@@ -129,9 +166,12 @@ function quadrangle(pt, n) {
    }
 quadrangle(points,30);
 brd.unsuspendUpdate();</script>
+</script>
+
+<!--infinity-->
 
 <script type='text/javascript'>
-board = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
+board = JXG.JSXGraph.initBoard('box3', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
 
      var level = 0;
      function run() {
