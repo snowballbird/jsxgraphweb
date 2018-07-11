@@ -20,7 +20,7 @@
           <button onclick="hideshow1()">Show / Hide Code</button>
           <br>
 
-            <div id="examplecode1" class="noheight" style="display:none">
+            <div id="examplecode1" class="noheight nopadding" style="display:none">
 {% highlight js %}
 var brd = JXG.JSXGraph.initBoard('jxgbox', {boundingbox: [-6, 6, 10, -8]});
 brd.suspendUpdate();
@@ -93,7 +93,7 @@ brd.unsuspendUpdate();
           <button onclick="hideshow2()">Show / Hide Code</button>
           <br>
 
-            <div id="examplecode2" class="noheight" style="display:none">
+            <div id="examplecode2" class="noheight nopadding" style="display:none">
 {% highlight js %}
 board = JXG.JSXGraph.initBoard('box', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
 
@@ -180,7 +180,7 @@ paint();
           <button onclick="hideshow3()">Show / Hide Code</button>
           <br>
 
-            <div id="examplecode3" class="noheight" style="display:none">
+            <div id="examplecode3" class="noheight nopadding" style="display:none">
 {% highlight js %}
 var brd = JXG.JSXGraph.initBoard('box3', {axis:true, boundingbox: [-8, 4, 8, -4]});
 var s = brd.create('slider',[[1,3],[5,3],[1,10,50]],{name:'n',snapWidth:1});
