@@ -1,0 +1,52 @@
+<div>
+  <div class="myitem">
+    <div id='box2' class='jxgbox' style='width:95%; height:500px; margin:auto;'></div>
+  </div>
+
+  <div class="noheight">
+    <form><input type="button" value="Next iteration" onclick="run();"></form>
+     <a href="{{ page.link2 }}">
+    <h1>test</h1>
+    </a>
+    <button onclick="hideshow2()">Show / Hide Code</button>
+    <br>
+
+      <div id="examplecode2" class="noheight nopadding" style="display:none">
+{% highlight js %}
+board = JXG.JSXGraph.initBoard('box', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
+
+v
+paint();
+{% endhighlight %}
+
+      </div>
+      <script type='text/javascript'>
+      function hideshow2() {
+        var x = document.getElementById("examplecode2");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+      }
+      </script>
+    </div>
+</div>
+
+<script type="text/javascript">
+var brd = JXG.JSXGraph.initBoard('box2', {axis:true, boundingbox: [-8, 4, 8, -4]});
+var s = brd.create('slider',[[1,3],[5,3],[1,10,50]],{name:'n',snapWidth:1});
+var a = brd.create('slider',[[1,2],[5,2],[-10,-3,0]],{name:'start'});
+var b = brd.create('slider',[[1,1],[5,1],[0,Math.PI,10]],{name:'end'});
+var f = function(x){ return Math.sin(x); };
+var plot = brd.create('functiongraph',[f,function(){return a.Value();}, function(){return b.Value();}]);
+
+var os = brd.create('riemannsum',[f,
+    function(){ return s.Value();}, function(){ return document.getElementById('sumtype').value;},
+    function(){return a.Value();},
+    function(){return b.Value();}
+    ],
+    {fillColor:'#ffff00', fillOpacity:0.3});
+
+brd.create('text',[-6,-3,function(){ return 'Sum='+(JXG.Math.Numerics.riemannsum(f,s.Value(),document.getElementById('sumtype').value,a.Value(),b.Value())).toFixed(4); }]);
+</script>

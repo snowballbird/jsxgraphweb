@@ -7,4 +7,4 @@ title1: Infinity
 title2: Sierpinski triangle
 ---
 
-{% include carousel.html %}
+{% include test.html %}
