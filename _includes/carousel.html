@@ -7,6 +7,8 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
+    
+    <!--example 1-->
     <div class="item active">
       <div>
         <div class="myitem">
@@ -74,6 +76,7 @@ brd.unsuspendUpdate();
           </div>
         </div>
       </div>
+    <!--example 2-->
     <div class="item">
       <div>
         <div class="myitem">
@@ -161,6 +164,53 @@ brd.unsuspendUpdate();
           </div>
       </div>
     </div>
+      
+      
+    <!--example 3-->
+    <div class="item">
+      <div>
+        <div class="myitem">
+          <div id='box3' class='jxgbox' style='width:95%; height:500px; margin:auto;'></div>
+        </div>
+
+        <div class="noheight">
+          <form><input type="button" value="Next iteration" onclick="run();"></form>
+          <h1>{{ page.title3 }}</h1>
+          <button onclick="hideshow3()">Show / Hide Code</button>
+          <br>
+
+            <div id="examplecode3" class="noheight" style="display:none">
+{% highlight js %}
+      var brd = JXG.JSXGraph.initBoard('jxgbox',{axis:true,boundingbox: [-12, 10, 12, -10]});
+brd.suspendUpdate();
+var a = brd.create('slider',[[2,8],[6,8],[0,3,6]],{name:'a'}); 
+var b = brd.create('slider',[[2,7],[6,7],[0,2,6]],{name:'b'});
+var A = brd.create('slider',[[2,6],[6,6],[0,3,6]],{name:'A'});
+var B = brd.create('slider',[[2,5],[6,5],[0,3,6]],{name:'B'});
+var delta = brd.create('slider',[[2,4],[6,4],[0,0,Math.PI]],{name:'&delta;'}); 
+
+var c = brd.create('curve',[
+          function(t){return A.Value()*Math.sin(a.Value()*t+delta.Value());},
+          function(t){return B.Value()*Math.sin(b.Value()*t);},
+          0, 2*Math.PI],{strokeColor:'#aa2233',strokeWidth:3});
+brd.unsuspendUpdate();
+       {% endhighlight %}
+
+            </div>
+            <script type='text/javascript'>
+            function hideshow3() {
+              var x = document.getElementById("examplecode3");
+              if (x.style.display === "none") {
+                  x.style.display = "block";
+              } else {
+                  x.style.display = "none";
+              }
+            }
+            </script>
+          </div>
+      </div>
+    </div>
+      
   </div>
 
   <!-- Left and right controls -->
@@ -280,4 +330,20 @@ board = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.02
          drawTriangle(a3, b3, c3, level);
      }
      paint();
+</script>
+  
+<script type="text/javascript">
+    var brd = JXG.JSXGraph.initBoard('jxgbox',{axis:true,boundingbox: [-12, 10, 12, -10]});
+brd.suspendUpdate();
+var a = brd.create('slider',[[2,8],[6,8],[0,3,6]],{name:'a'}); 
+var b = brd.create('slider',[[2,7],[6,7],[0,2,6]],{name:'b'});
+var A = brd.create('slider',[[2,6],[6,6],[0,3,6]],{name:'A'});
+var B = brd.create('slider',[[2,5],[6,5],[0,3,6]],{name:'B'});
+var delta = brd.create('slider',[[2,4],[6,4],[0,0,Math.PI]],{name:'&delta;'}); 
+
+var c = brd.create('curve',[
+          function(t){return A.Value()*Math.sin(a.Value()*t+delta.Value());},
+          function(t){return B.Value()*Math.sin(b.Value()*t);},
+          0, 2*Math.PI],{strokeColor:'#aa2233',strokeWidth:3});
+brd.unsuspendUpdate();
 </script>
