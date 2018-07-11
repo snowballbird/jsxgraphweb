@@ -126,10 +126,10 @@ var os = brd.create('riemannsum',[f,
 brd.create('text',[-6,-3,function(){ return 'Sum='+(JXG.Math.Numerics.riemannsum(f,s.Value(),"left".value,a.Value(),b.Value())).toFixed(4); }]);
 </script>
 
-<!--Dreiecke-->
+<!--infinity-->
 
 <script type='text/javascript'>
-var brd = JXG.JSXGraph.initBoard('box2', {boundingbox: [-6, 6, 10, -8]});
+var brd = JXG.JSXGraph.initBoard('box3', {boundingbox: [-6, 6, 10, -8]});
 brd.suspendUpdate();
 var S = brd.create('slider', [[-5,-6],[5,-6],[0,0.95,1]], {name:'S'});
 var hue = brd.create('slider', [[-5,-7],[5,-7],[0,8,36]], {name:'color'});
@@ -165,14 +165,13 @@ function quadrangle(pt, n) {
         quadrangle(arr, --n);
    }
 quadrangle(points,30);
-brd.unsuspendUpdate();</script>
+brd.unsuspendUpdate();
 </script>
 
-<!--infinity-->
+
+<!--Dreiecke-->
 
 <script type='text/javascript'>
-board = JXG.JSXGraph.initBoard('box3', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
-
      var level = 0;
      function run() {
          JXG.JSXGraph.freeBoard(board);
