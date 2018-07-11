@@ -342,19 +342,58 @@ board = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.02
 </script>
 
 <script type='text/javascript'>
-var brd = JXG.JSXGraph.initBoard('box3', {axis:true, boundingbox: [-8, 4, 8, -4]});
-var s = brd.create('slider',[[1,3],[5,3],[1,10,50]],{name:'n',snapWidth:1});
-var a = brd.create('slider',[[1,2],[5,2],[-10,-Math.PI,0]],{name:'start'});
-var b = brd.create('slider',[[1,1],[5,1],[0,2*Math.PI,10]],{name:'end'});
-var f = function(x){ return Math.sin(x); };
-var plot = brd.create('functiongraph',[f,function(){return a.Value();}, function(){return b.Value();}]);
+var brd = JXG.JSXGraph.initBoard('jxgbox',{boundingbox:[-5,7,5,-3]});
+brd.renderer.container.style.backgroundColor = '#3d1c24';          // background color board
 
-var os = brd.create('riemannsum',[f,
-    function(){ return s.Value();}, function(){ return "left";},
-    function(){return a.Value();},
-    function(){return b.Value();}
-    ],
-    {fillColor:'#ffff00', fillOpacity:0.3});
+brd.suspendUpdate();
+// Pentagon
+var A = brd.create('point',[-2,-2]);
+var B = brd.create('point',[2,-2]);
+var pol5 = brd.create('regularpolygon',[A,B,5], {withLines:false, fillColor:'none', highlightFillColor:'none', fillOpacity:0.0});
+for (var i=0;i<5;i++) pol5.vertices[i].setProperty({color:'#3d1c24'});
 
-brd.create('text',[-6,-3,function(){ return 'Sum='+(JXG.Math.Numerics.riemannsum(f,s.Value(),"left",a.Value(),b.Value())).toFixed(4); }]);
+var diagPentagon = (1+Math.sqrt(5))*0.5*A.Dist(B);
+
+// Triangle
+var C = brd.create('point',[-2,-2]);
+var D = brd.create('point',[C.X()+3/5*diagPentagon, C.Y()]);
+var pol3 = brd.create('regularpolygon',[C,D,3], {withLines:false, fillColor:'none', highlightFillColor:'none', fillOpacity:0.0});
+for (i=0;i<3;i++) pol3.vertices[i].setProperty({color:'#3d1c24'});
+
+// Heptagon
+var E = brd.create('point',[-2,-2]);
+
+//
+// Side length of the heptagon depending on the diagonal of the pentagon:
+// r_7 = 7/5*r_5
+var diagHeptagon = 7/5*diagPentagon;
+// s_7 = r_7*sqrt(2)*sqrt(1-cos(pi/7)) (law of cosines)
+var sideHeptagon = Math.sqrt(2*(1-Math.cos(Math.PI/7)))*diagHeptagon;
+// 
+var F = brd.create('point',[E.X()+sideHeptagon, E.Y()]);
+var pol7 = brd.create('regularpolygon',[E,F,7], {withLines:false, fillColor:'none', highlightFillColor:'none', fillOpacity:0.0});
+for (i=0;i<7;i++) pol7.vertices[i].setProperty({color:'#3d1c24'});
+
+// Create the Reuleauc curves
+var reuleauxHeptagon = brd.create('curve', JXG.Math.Geometry.reuleauxPolygon(pol7.vertices, 7), 
+       {strokeWidth:6, strokeColor:'#d66d55', fillColor:'#d6bb55', highlightFillColor:'#d6bb55'});
+var reuleauxPentagon = brd.create('curve', JXG.Math.Geometry.reuleauxPolygon(pol5.vertices, 5), 
+       {strokeWidth:6, strokeColor:'#d66d55', fillColor:'#ad5544', highlightFillColor:'#ad5544'});
+var reuleauxTriangle = brd.create('curve', JXG.Math.Geometry.reuleauxPolygon(pol3.vertices, 3), 
+       {strokeWidth:6, strokeColor:'#d66d55', fillColor:'#703545', highlightFillColor:'#703545'});
+brd.unsuspendUpdate();
+
+var rol5 = brd.createRoulette(reuleauxHeptagon, reuleauxPentagon, 6*Math.PI/5, Math.PI/45, 1, 50, [A,B,C,D]); 
+var rol3 = brd.createRoulette(reuleauxPentagon, reuleauxTriangle, 6*Math.PI/5, Math.PI/45, -1, 50, [C,D]); 
+var rollIt = function() {
+                rol5.rolling();
+                rol3.rolling();
+};
+var interval;
+var start = function() {
+              interval = setInterval(rollIt,10);
+};
+var stop = function() {
+              clearInterval(interval);
+}
 </script>
