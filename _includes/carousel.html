@@ -259,15 +259,15 @@ brd2.unsuspendUpdate();
 <script type="text/javascript">
 brd3 = JXG.JSXGraph.initBoard('box3', {axis:true, boundingbox: [-6, 3, 8, -3]});
 brd3.suspendUpdate();
-brd3.create('functiongraph', [function(t){ return Math.sin(t); },-10, 10],{strokeColor: "#cccccc"});
-var s = brd3.create('slider', [[0.75,-1.5],[5.75,-1.5],[0,0,10]], {name:'S',snapWidth:1});
+brd3.create('functiongraph', [function(t){ return Math.sin(t); }, -10, 10],{strokeColor: "#cccccc"});
+var s2 = brd3.create('slider', [[0.75,-1.5],[5.75,-1.5],[0,0,10]], {name:'T',snapWidth:1});
 brd3.create('functiongraph', [
   function(t) {
-    var val = 0, i, sv = s.Value()+1;
+    var val = 0, i, sv = s2.Value()+1;
     for(i = 0; i < sv; i++) {
-      val = val + Math.pow(-1, i) * Math.pow(t, 2 * i + 1) / JXG.Math.factorial(2*i+1);
+     val = val + Math.pow(-1, i) * Math.pow(t, 2 * i + 1) / JXG.Math.factorial(2*i+1);
     }
     return val;
-  }, -10, 10], {strokeColor: "#bb0000"});
+  }, -10, 10],{strokeColor: "#009900"});						
 brd3.unsuspendUpdate();
 </script>
