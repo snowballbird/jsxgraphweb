@@ -5,7 +5,7 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
-    
+
     <!--example 1-->
     <div class="item active">
       <div>
@@ -76,8 +76,8 @@ brd.unsuspendUpdate();
           </div>
         </div>
       </div>
-      
-      
+
+
 <!--example 2-->
     <div class="item">
       <div>
@@ -164,8 +164,8 @@ paint();
           </div>
       </div>
     </div>
-      
-      
+
+
     <!--example 3-->
     <div class="item">
       <div>
@@ -189,11 +189,11 @@ var b = brd.create('slider',[[1,1],[5,1],[0,2*Math.PI,10]],{name:'end'});
 var f = function(x){ return Math.sin(x); };
 var plot = brd.create('functiongraph',[f,function(){return a.Value();}, function(){return b.Value();}]);
 
-var os = brd.create('riemannsum',[f, 
+var os = brd.create('riemannsum',[f,
     function(){ return s.Value();}, function(){ return "left";},
-    function(){return a.Value();}, 
+    function(){return a.Value();},
     function(){return b.Value();}
-    ], 
+    ],
     {fillColor:'#ffff00', fillOpacity:0.3});
 
 brd.create('text',[-6,-3,function(){ return 'Sum='+(JXG.Math.Numerics.riemannsum(f,s.Value(),"left",a.Value(),b.Value())).toFixed(4); }]);
@@ -213,23 +213,23 @@ brd.create('text',[-6,-3,function(){ return 'Sum='+(JXG.Math.Numerics.riemannsum
           </div>
       </div>
     </div>
-      
+
   </div>
 
   <!-- Left and right controls -->
   <a class="carousel-control left" style="background-image: none; height:300px;" href="#myCarousel" data-slide="prev">
     <span class="fa-stack fa-lg" style="margin-top: 100px;">
-      <i class="fa fa-circle fa-stack-2x"></i>
-      <i class="fa fa-arrow-left fa-stack-1x fa-inverse"></i>
+      <i class="fa fa-circle fa-stack-2x" style="color:black;"></i>
+      <i class="fa fa-arrow-left fa-stack-1x fa-inverse" style="color:white;"></i>
     </span>
   </a>
 
-  <a class="carousel-control right" style="background-image: none; height:300px;" href="#myCarousel" data-slide="next">
-    <span class="fa-stack fa-lg" style="margin-top: 100px;">
-      <i class="fa fa-circle fa-stack-2x"></i>
-      <i class="fa fa-arrow-right fa-stack-1x fa-inverse"></i>
-    </span>
+  <div class="carousel-control right" style="background-image: none; height:300px;" href="#myCarousel" data-slide="next">
+    <a class="fa-stack fa-lg" style="margin-top: 100px;">
+      <i class="fa fa-circle fa-stack-2x" style="color:black;"></i>
+      <i class="fa fa-arrow-right fa-stack-1x fa-inverse"style="color:white;"></i>
     </a>
+  </div>
 
 </div>
 
@@ -324,7 +324,7 @@ board = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.02
          c3 = c;
          drawTriangle(a3, b3, c3, level);
      }
-  
+
     function paint() {
          // Initial triangle
          var xCoords = [0, 1, 0.5];
@@ -332,11 +332,11 @@ board = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.02
          drawPolygon(xCoords, yCoords, level);
          drawTriangle({x:0,y:0}, {x:1,y:0}, {x:0.5,y:1}, level);
      }
-  
+
      paint();
-     
+
 </script>
-  
+
 <script type='text/javascript'>
 var brd = JXG.JSXGraph.initBoard('box3', {axis:true, boundingbox: [-8, 4, 8, -4]});
 var s = brd.create('slider',[[1,3],[5,3],[1,10,50]],{name:'n',snapWidth:1});
@@ -345,13 +345,12 @@ var b = brd.create('slider',[[1,1],[5,1],[0,2*Math.PI,10]],{name:'end'});
 var f = function(x){ return Math.sin(x); };
 var plot = brd.create('functiongraph',[f,function(){return a.Value();}, function(){return b.Value();}]);
 
-var os = brd.create('riemannsum',[f, 
+var os = brd.create('riemannsum',[f,
     function(){ return s.Value();}, function(){ return "left";},
-    function(){return a.Value();}, 
+    function(){return a.Value();},
     function(){return b.Value();}
-    ], 
+    ],
     {fillColor:'#ffff00', fillOpacity:0.3});
 
 brd.create('text',[-6,-3,function(){ return 'Sum='+(JXG.Math.Numerics.riemannsum(f,s.Value(),"left",a.Value(),b.Value())).toFixed(4); }]);
 </script>
-
