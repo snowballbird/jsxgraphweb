@@ -6,8 +6,8 @@ title1: Infinity
 link1: https://jsxgraph.org/wiki/index.php/Infinity
 title2: Sierpinski triangle
 link2: https://jsxgraph.org/wiki/index.php/Sierpinski_triangle
-title3: Lissajous curves
-link3: https://jsxgraph.org/wiki/index.php/Lissajous_curves
+title3: Riemann Sum 
+link3: https://jsxgraph.org/wiki/index.php/Riemann_sums
 ---
 
 ### Features
@@ -34,3 +34,8 @@ link3: https://jsxgraph.org/wiki/index.php/Lissajous_curves
 * JSXGraph is the basis of [sketchometry](//sketchometry.org). (Our attempt on dynamic geometry software)
 
 {% include carousel.html %}
+
+### JSXcompressor
+* JSXGraph contains [utilities to read files](jsxcompressor/index.html) which have been compressed by the ZLIB (http://zlib.org) library
+* pure JavaScript implementation to deflate, unzip and base64_decode
+* Delivery of compressed JavaScript inside of an HTML file
