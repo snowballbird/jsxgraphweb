@@ -499,6 +499,7 @@ header.header-post .post-heading .post-subheading {
   height: auto;
   width:100%;
   padding: 35px;
+  padding-top: 10px;
 }
 
 .nopadding {
