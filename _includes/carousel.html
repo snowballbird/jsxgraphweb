@@ -171,7 +171,7 @@ paint();
       <div>
         <div class="myitem">
           <div id='box3' class='jxgbox' style='width:95%; height:500px; margin:auto;'>
-            
+
             <script type='text/javascript'>JXG.Options.point.zoom = true;
 var brd = JXG.JSXGraph.initBoard('box1', {boundingbox:[-0.1,1.1,1.1,-0.1]});
 var i, h, s, v;
@@ -182,8 +182,8 @@ for (i=0;i<30;i++) {
   v = 1.0;
   brd.createElement('point',[Math.random(),Math.random()],
      {
-       withLabel:false, 
-       face:'circle', 
+       withLabel:false,
+       face:'circle',
        size:Math.random()*65,
        strokeColor:JXG.hsv2rgb(h,s,v),
        fillColor:JXG.hsv2rgb((h+180)%360,s,v),
@@ -267,29 +267,29 @@ brd.suspendUpdate();
 var S = brd.create('slider', [[-5,-6],[5,-6],[0,0.95,1]], {name:'S'});
 var hue = brd.create('slider', [[-5,-7],[5,-7],[0,8,36]], {name:'color'});
 var points = new Array();
-points[0] = brd.create('point',[5, 5], {name:' '});   
-points[1] = brd.create('point',[-5, 5], {name:' '});  
-points[2] = brd.create('point',[-5, -5], {name:' '}); 
-points[3] = brd.create('point',[5, -5], {name:' '});  
- 
+points[0] = brd.create('point',[5, 5], {name:' '});
+points[1] = brd.create('point',[-5, 5], {name:' '});
+points[2] = brd.create('point',[-5, -5], {name:' '});
+points[3] = brd.create('point',[5, -5], {name:' '});
+
 function quadrangle(pt, n) {
     var col;
     var arr = new Array();
     for(var i = 0; i < 4; i++) {
-        arr[i] = brd.create('point', 
+        arr[i] = brd.create('point',
             [function(t) {
-                return function () {var x = pt[t].X(); 
-                                var x1 = pt[(t+1)%4].X(); 
+                return function () {var x = pt[t].X();
+                                var x1 = pt[(t+1)%4].X();
                                 var s = S.Value();
                                 return x+(x1-x)*s;
-                         }}(i), 
+                         }}(i),
              function(t) {
-                return function () {var y = pt[t].Y(); 
-                                var y1 = pt[(t+1)%4].Y(); 
+                return function () {var y = pt[t].Y();
+                                var y1 = pt[(t+1)%4].Y();
                                 var s = S.Value();
                                 return y+(y1-y)*s;
                          }}(i)
-            ], 
+            ],
             {size:1, name:"",withLabel:false,visible:false});
     }
     col =  function(){return JXG.hsv2rgb(hue.Value()*n,0.7,0.9);};
@@ -359,9 +359,5 @@ board = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.02
      }
 
      paint();
-
-</script>
-
-
 
 </script>
