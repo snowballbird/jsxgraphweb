@@ -341,14 +341,23 @@ board = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.02
 </script>
 
 <script type='text/javascript'>
-var board = JXG.JSXGraph.initBoard('box3', {boundingbox: [-10, 10, 10, -10]});
-var a = board.create('slider', [[1,8],[5,8],[0,1,4]],{name:'a'});
-var b = board.create('slider', [[1,9],[5,9],[0,0.25,4]],{name:'b'});
+function n_eck(ne,sz) {
+   for(var i=0;i<ne;i++) {
+     t.rt(360/ne);
+     t.fd(sz);
+   }
+}
 
-var c = board.create('curve', [function(phi){return a.Value()+b.Value()*phi; }, [0, 0],0, 8*Math.PI],
-             {curveType:'polar', strokewidth:4});      
+function mn_eck(ne,sz) {
+   for(var i=0;i<ne;i++) {
+     t.rt(360/ne);
+     n_eck(ne,sz);
+   }
+}
 
-var g = board.create('glider', [c]);
-var t = board.create('tangent', [g], {dash:2,strokeColor:'#a612a9'});
-var n = board.create('normal', [g], {dash:2,strokeColor:'#a612a9'});
+t.cs();
+t.setProperty({strokeWidth:4,strokeOpacity:0.6,fillOpacity:0.3});
+t.hideTurtle();
+mn_eck(36,20);
+
 </script>
