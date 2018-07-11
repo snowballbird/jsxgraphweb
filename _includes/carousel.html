@@ -174,20 +174,20 @@ brd.unsuspendUpdate();
         </div>
 
         <div class="noheight">
-          <form><input type="button" value="Next iteration" onclick="run();"></form>
+          
           <h1>{{ page.title3 }}</h1>
           <button onclick="hideshow3()">Show / Hide Code</button>
           <br>
 
             <div id="examplecode3" class="noheight" style="display:none">
 {% highlight js %}
-      var brd = JXG.JSXGraph.initBoard('jxgbox',{axis:true,boundingbox: [-12, 10, 12, -10]});
+var brd = JXG.JSXGraph.initBoard('box3',{axis:true,boundingbox: [-4, 6, 8, -6]});
 brd.suspendUpdate();
-var a = brd.create('slider',[[2,8],[6,8],[0,3,6]],{name:'a'}); 
-var b = brd.create('slider',[[2,7],[6,7],[0,2,6]],{name:'b'});
-var A = brd.create('slider',[[2,6],[6,6],[0,3,6]],{name:'A'});
-var B = brd.create('slider',[[2,5],[6,5],[0,3,6]],{name:'B'});
-var delta = brd.create('slider',[[2,4],[6,4],[0,0,Math.PI]],{name:'&delta;'}); 
+var a = brd.create('slider',[[2,5],[6,5],[0,3,6]],{name:'a'}); 
+var b = brd.create('slider',[[2,4],[6,4],[0,2,6]],{name:'b'});
+var A = brd.create('slider',[[2,3],[6,3],[0,3,6]],{name:'A'});
+var B = brd.create('slider',[[2,2],[6,2],[0,3,6]],{name:'B'});
+var delta = brd.create('slider',[[2,1],[6,1],[0,0,Math.PI]],{name:'&delta;'}); 
 
 var c = brd.create('curve',[
           function(t){return A.Value()*Math.sin(a.Value()*t+delta.Value());},
@@ -333,13 +333,13 @@ board = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.02
 </script>
   
 <script type="text/javascript">
-    var brd = JXG.JSXGraph.initBoard('jxgbox',{axis:true,boundingbox: [-12, 10, 12, -10]});
+    var brd = JXG.JSXGraph.initBoard('box3',{axis:true,boundingbox: [-4, 6, 8, -6]});
 brd.suspendUpdate();
-var a = brd.create('slider',[[2,8],[6,8],[0,3,6]],{name:'a'}); 
-var b = brd.create('slider',[[2,7],[6,7],[0,2,6]],{name:'b'});
-var A = brd.create('slider',[[2,6],[6,6],[0,3,6]],{name:'A'});
-var B = brd.create('slider',[[2,5],[6,5],[0,3,6]],{name:'B'});
-var delta = brd.create('slider',[[2,4],[6,4],[0,0,Math.PI]],{name:'&delta;'}); 
+var a = brd.create('slider',[[2,5],[6,5],[0,3,6]],{name:'a'}); 
+var b = brd.create('slider',[[2,4],[6,4],[0,2,6]],{name:'b'});
+var A = brd.create('slider',[[2,3],[6,3],[0,3,6]],{name:'A'});
+var B = brd.create('slider',[[2,2],[6,2],[0,3,6]],{name:'B'});
+var delta = brd.create('slider',[[2,1],[6,1],[0,0,Math.PI]],{name:'&delta;'}); 
 
 var c = brd.create('curve',[
           function(t){return A.Value()*Math.sin(a.Value()*t+delta.Value());},
