@@ -3,7 +3,11 @@ layout: page
 title: Examples
 subtitle:  Dynamic Mathematics with JavaScript
 title1: Infinity
+link1: https://jsxgraph.org/wiki/index.php/Infinity
 title2: Sierpinski triangle
+link2: https://jsxgraph.org/wiki/index.php/Sierpinski_triangle
+title3: Lissajous curves
+link3: https://jsxgraph.org/wiki/index.php/Lissajous_curves
 ---
 
 ### Features
