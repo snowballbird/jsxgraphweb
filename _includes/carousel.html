@@ -170,7 +170,26 @@ paint();
     <div class="item">
       <div>
         <div class="myitem">
-          <div id='box3' class='jxgbox' style='width:95%; height:500px; margin:auto;'></div>
+          <div id='box3' class='jxgbox' style='width:95%; height:500px; margin:auto;'>JXG.Options.point.zoom = true;
+var brd = JXG.JSXGraph.initBoard('box1', {boundingbox:[-0.1,1.1,1.1,-0.1]});
+var i, h, s, v;
+
+for (i=0;i<30;i++) {
+  h = Math.random()*360;
+  s = Math.random();
+  v = 1.0;
+  brd.createElement('point',[Math.random(),Math.random()],
+     {
+       withLabel:false, 
+       face:'circle', 
+       size:Math.random()*65,
+       strokeColor:JXG.hsv2rgb(h,s,v),
+       fillColor:JXG.hsv2rgb((h+180)%360,s,v),
+       highlightFillColor:JXG.hsv2rgb(h,s,v),
+       fillOpacity:0.7,
+       highlightFillOpacity:0.4
+      });
+}</div>
         </div>
 
         <div class="noheight">
@@ -341,24 +360,5 @@ board = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.02
 </script>
 
 <script type='text/javascript'>
-JXG.Options.point.zoom = true;
-var brd = JXG.JSXGraph.initBoard('box1', {boundingbox:[-0.1,1.1,1.1,-0.1]});
-var i, h, s, v;
 
-for (i=0;i<30;i++) {
-  h = Math.random()*360;
-  s = Math.random();
-  v = 1.0;
-  brd.createElement('point',[Math.random(),Math.random()],
-     {
-       withLabel:false, 
-       face:'circle', 
-       size:Math.random()*65,
-       strokeColor:JXG.hsv2rgb(h,s,v),
-       fillColor:JXG.hsv2rgb((h+180)%360,s,v),
-       highlightFillColor:JXG.hsv2rgb(h,s,v),
-       fillOpacity:0.7,
-       highlightFillOpacity:0.4
-      });
-}
 </script>
