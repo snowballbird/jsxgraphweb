@@ -293,14 +293,6 @@ board = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.02
          board.unsuspendUpdate();
      }
 
-     function paint() {
-         // Initial triangle
-         var xCoords = [0, 1, 0.5];
-         var yCoords = [0, 0, 1];
-         drawPolygon(xCoords, yCoords, level);
-         drawTriangle({x:0,y:0}, {x:1,y:0}, {x:0.5,y:1}, level);
-     }
-
      function drawPolygon(xCoords, yCoords,level) {
          p1 = board.create('point', [xCoords[0], yCoords[0]], {visible:false,name:'',withLabel:false});
          p2 = board.create('point', [xCoords[1], yCoords[1]], {visible:false,name:'',withLabel:false});
@@ -337,8 +329,17 @@ board = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.02
          c3 = c;
          drawTriangle(a3, b3, c3, level);
      }
+  
+    function paint() {
+         // Initial triangle
+         var xCoords = [0, 1, 0.5];
+         var yCoords = [0, 0, 1];
+         drawPolygon(xCoords, yCoords, level);
+         drawTriangle({x:0,y:0}, {x:1,y:0}, {x:0.5,y:1}, level);
+     }
+  
      paint();
-     run();
+     
 </script>
   
 <script type='text/javascript'>
