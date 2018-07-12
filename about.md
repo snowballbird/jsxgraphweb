@@ -4,10 +4,8 @@ title: Examples
 subtitle:  Dynamic Mathematics with JavaScript
 title1: Riemann Sum
 link1: https://jsxgraph.org/wiki/index.php/Riemann_sums
-title2: Infinity
-link2: https://jsxgraph.org/wiki/index.php/Infinity
-title3: Sine Power Series
-link3: https://jsxgraph.org/wiki/index.php/Power_Series_for_sine_and_cosine
+title2: Sierpinski Triangle
+link2: https://jsxgraph.org/wiki/index.php/Sierpinski_triangle
 ---
 
 ### Features
@@ -36,6 +34,6 @@ link3: https://jsxgraph.org/wiki/index.php/Power_Series_for_sine_and_cosine
 {% include carouseltest.html %}
 
 ### JSXcompressor
-* JSXGraph contains [utilities to read files](jsxcompressor/index.html) which have been compressed by the ZLIB (http://zlib.org) library
+* JSXGraph [contains utilities to read files](jsxcompressor/index.html) which have been compressed by the ZLIB (http://zlib.org) library
 * pure JavaScript implementation to deflate, unzip and base64_decode
 * Delivery of compressed JavaScript inside of an HTML file
