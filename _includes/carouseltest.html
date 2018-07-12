@@ -237,10 +237,7 @@ var os = brd1.create('riemannsum',[f,
     {fillColor:'#ffff00', fillOpacity:0.3});
 
 brd1.create('text',[-6,-3,function(){ return 'Sum='+(JXG.Math.Numerics.riemannsum(f,s.Value(),"left".value,a.Value(),b.Value())).toFixed(4); }]);
-</script>
 
-
-<script type="text/javascript">
 var brd2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
 
        var level = 0;
@@ -298,10 +295,7 @@ var brd2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1
            drawTriangle(a3, b3, c3, level);
        }
        paint();
-</script>
 
-
-<script type="text/javascript">
 var board2 = JXG.JSXGraph.initBoard('box3', {axis:true, boundingbox: [-6, 3, 8, -3]});
 board2.suspendUpdate();
 board2.create('functiongraph', [function(t){ return Math.cos(t); }, -10, 10],{strokeColor: "#cccccc"});
@@ -315,4 +309,4 @@ board2.create('functiongraph', [
     return val;
   }, -10, 10],{strokeColor: "#009900"});
 board2.unsuspendUpdate();
-     </script>
+</script>
