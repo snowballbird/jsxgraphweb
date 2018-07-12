@@ -8,3 +8,4 @@ title2: Sierpinski triangle
 ---
 
 {% include test.html %}
+{% include carouseltest.html %}

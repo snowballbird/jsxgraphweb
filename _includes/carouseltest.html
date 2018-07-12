@@ -1,0 +1,308 @@
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+
+
+<!--<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    {% for feature in page.features %}
+      {% if forloop.index == 1 %} <div class="carousel-item active" style="background:url('{{feature.img}}')"> {% else %} <div class="carousel-item" style="background:url('{{feature.img}}')"> {% endif %}
+        <div class="backdrop"></div>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>{{feature.title}}</h1>
+            <p>
+              {{feature.text}}
+            </p>
+            <p>
+              <a href="{{feature.link}}" class="btn btn-lg btn-primary">Learn More</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>-->
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+  <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <div>
+        <div class="myitem">
+        	<div id='box1' class="jxgbox" style="width:95%; height:500px; margin:auto;"></div>
+        </div>
+
+        <div class="noheight">
+          <h1>{{ page.title1 }}</h1>
+          <button onclick="hideshow1()">Show / Hide Code</button>
+          <br>
+          <div id="examplecode1" class="noheight" style="display:none">
+{% highlight js %}
+var brd = JXG.JSXGraph.initBoard('jxgbox', {boundingbox: [-6, 6, 10, -8]});
+brd.suspendUpdate();
+var S = brd.create('slider', [[-5,-6],[5,-6],[0,0.95,1]], {name:'S'});
+var hue = brd.create('slider', [[-5,-7],[5,-7],[0,8,36]], {name:'color'});
+var points = new Array();
+points[0] = brd.create('point',[5, 5], {name:' '});
+points[1] = brd.create('point',[-5, 5], {name:' '});
+points[2] = brd.create('point',[-5, -5], {name:' '});
+points[3] = brd.create('point',[5, -5], {name:' '});
+
+function quadrangle(pt, n) {
+    var col;
+    var arr = new Array();
+    for(var i = 0; i < 4; i++) {
+        arr[i] = brd.create('point',
+            [function(t) {
+                return function () {var x = pt[t].X();
+                                var x1 = pt[(t+1)%4].X();
+                                var s = S.Value();
+                                return x+(x1-x)*s;
+                         }}(i),
+             function(t) {
+                return function () {var y = pt[t].Y();
+                                var y1 = pt[(t+1)%4].Y();
+                                var s = S.Value();
+                                return y+(y1-y)*s;
+                         }}(i)
+            ],
+            {size:1, name:"",withLabel:false,visible:false});
+    }
+    col =  function(){return JXG.hsv2rgb(hue.Value()*n,0.7,0.9);};
+    brd.create('polygon',pt, {fillColor:col});
+    if(n>0)
+        quadrangle(arr, --n);
+   }
+quadrangle(points,30);
+brd.unsuspendUpdate();
+{% endhighlight %}
+
+          </div>
+          <script type='text/javascript'>
+          function hideshow1() {
+              var x = document.getElementById("examplecode1");
+              if (x.style.display === "none") {
+                  x.style.display = "block";
+              } else {
+                  x.style.display = "none";
+              }
+          }
+          </script>
+        </div>
+
+    </div>
+  </div>
+
+    <div class="item">
+        <div>
+        <div class="myitem">
+          <div id='box2' class='jxgbox' style='width:95%; height:500px; margin:auto;'></div>
+        </div>
+
+        <div class="noheight">
+          <form><input type="button" value="Next iteration" onclick="run();"></form>
+          <h1>{{ page.title2 }}</h1>
+          <button onclick="hideshow2()">Show / Hide Code</button>
+          <br>
+          <div id="examplecode2" class="noheight" style="display:none">
+      {% highlight js %}
+      board = JXG.JSXGraph.initBoard('box', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
+
+       var level = 0;
+       function run() {
+           JXG.JSXGraph.freeBoard(board);
+           board = JXG.JSXGraph.initBoard('box', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
+           level++;
+           board.suspendUpdate();
+            paint();
+           board.unsuspendUpdate();
+       }
+
+       function paint() {
+           // Initial triangle
+           var xCoords = [0, 1, 0.5];
+           var yCoords = [0, 0, 1];
+           drawPolygon(xCoords, yCoords, level);
+           drawTriangle({x:0,y:0}, {x:1,y:0}, {x:0.5,y:1}, level);
+       }
+
+       function drawPolygon(xCoords, yCoords,level) {
+           p1 = board.create('point', [xCoords[0], yCoords[0]], {visible:false,name:'',withLabel:false});
+           p2 = board.create('point', [xCoords[1], yCoords[1]], {visible:false,name:'',withLabel:false});
+           p3 = board.create('point', [xCoords[2], yCoords[2]], {visible:false,name:'',withLabel:false});
+           var colors=['#000000','#665566','#994499','#BB33BB','#EE99FF','#FFCCFF'];
+           l1 = board.create('line',[p1,p2],{straightFirst:false,straightLast:false,strokeColor:colors[level%6],name:'',withLabel:false});
+           l2 = board.create('line',[p2,p3],{straightFirst:false,straightLast:false,strokeColor:colors[level%6],name:'',withLabel:false});
+           l3 = board.create('line',[p3,p1],{straightFirst:false,straightLast:false,strokeColor:colors[level%6],name:'',withLabel:false});
+       }
+
+       function drawTriangle(a, b, c, level) {
+           if (level==0) return;
+           level -= 1;
+
+           // In das übergebene Dreieck, wird ein auf dem Kopf stehendes Dreieck eingefügt
+           var xCoords = [c.x, (c.x+b.x)/2, (a.x+c.x)/2];
+           var yCoords = [b.y, (c.y+a.y)/2, (c.y+a.y)/2];
+
+           drawPolygon(xCoords, yCoords,level);
+
+           // 3 neue Dreiecke bestimmen
+           a1 = a;
+           b1 = {x:c.x, y:b.y};
+           c1 = {x:(a.x+c.x)/2, y:(c.y+a.y)/2};
+           drawTriangle(a1, b1, c1, level);
+
+           a2 = {x:c.x, y:b.y};
+           b2 = b;
+           c2 = {x:(c.x+b.x)/2, y:(c.y+a.y)/2};
+           drawTriangle(a2, b2, c2, level);
+
+           a3 = {x:(a.x+c.x)/2, y:(c.y+a.y)/2};
+           b3 = {x:(c.x+b.x)/2, y:(c.y+a.y)/2};
+           c3 = c;
+           drawTriangle(a3, b3, c3, level);
+       }
+       paint();
+      {% endhighlight %}
+
+          </div>
+          <script type='text/javascript'>
+          function hideshow2() {
+              var x = document.getElementById("examplecode2");
+              if (x.style.display === "none") {
+                  x.style.display = "block";
+              } else {
+                  x.style.display = "none";
+              }
+          }
+          </script>
+        </div>
+
+      </div>
+      </div>
+    </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control left" style="background-image: none; height:300px;" href="#myCarousel" data-slide="prev">
+    <span class="fa-stack fa-lg" style="margin-top: 100px;">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa fa-arrow-left fa-stack-1x fa-inverse"></i>
+    </span>
+  </a>
+
+  <a class="carousel-control right" style="background-image: none; height:300px;" href="#myCarousel" data-slide="next">
+    <span class="fa-stack fa-lg" style="margin-top: 100px;">
+      <i class="fa fa-circle fa-stack-2x"></i>
+      <i class="fa fa-arrow-right fa-stack-1x fa-inverse"></i>
+    </span>
+    </a>
+
+</div>
+
+
+
+<script type='text/javascript'>
+var brd = JXG.JSXGraph.initBoard('box1', {boundingbox: [-6, 6, 10, -8]});
+brd.suspendUpdate();
+var S = brd.create('slider', [[-5,-6],[5,-6],[0,0.95,1]], {name:'S'});
+var hue = brd.create('slider', [[-5,-7],[5,-7],[0,8,36]], {name:'color'});
+var points = new Array();
+points[0] = brd.create('point',[5, 5], {name:' '});
+points[1] = brd.create('point',[-5, 5], {name:' '});
+points[2] = brd.create('point',[-5, -5], {name:' '});
+points[3] = brd.create('point',[5, -5], {name:' '});
+function quadrangle(pt, n) {
+    var col;
+    var arr = new Array();
+    for(var i = 0; i < 4; i++) {
+        arr[i] = brd.create('point',
+            [function(t) {
+                return function () {var x = pt[t].X();
+                                var x1 = pt[(t+1)%4].X();
+                                var s = S.Value();
+                                return x+(x1-x)*s;
+                         }}(i),
+             function(t) {
+                return function () {var y = pt[t].Y();
+                                var y1 = pt[(t+1)%4].Y();
+                                var s = S.Value();
+                                return y+(y1-y)*s;
+                         }}(i)
+            ],
+            {size:1, name:"",withLabel:false,visible:false});
+    }
+    col =  function(){return JXG.hsv2rgb(hue.Value()*n,0.7,0.9);};
+    brd.create('polygon',pt, {fillColor:col});
+    if(n>0)
+        quadrangle(arr, --n);
+   }
+quadrangle(points,30);
+brd.unsuspendUpdate();
+</script>
+
+<script type='text/javascript'>
+board = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
+     var level = 0;
+     function run() {
+         JXG.JSXGraph.freeBoard(board);
+         board = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
+         level++;
+         board.suspendUpdate();
+          paint();
+         board.unsuspendUpdate();
+     }
+     function paint() {
+         // Initial triangle
+         var xCoords = [0, 1, 0.5];
+         var yCoords = [0, 0, 1];
+         drawPolygon(xCoords, yCoords, level);
+         drawTriangle({x:0,y:0}, {x:1,y:0}, {x:0.5,y:1}, level);
+     }
+     function drawPolygon(xCoords, yCoords,level) {
+         p1 = board.create('point', [xCoords[0], yCoords[0]], {visible:false,name:'',withLabel:false});
+         p2 = board.create('point', [xCoords[1], yCoords[1]], {visible:false,name:'',withLabel:false});
+         p3 = board.create('point', [xCoords[2], yCoords[2]], {visible:false,name:'',withLabel:false});
+         var colors=['#000000','#665566','#994499','#BB33BB','#EE99FF','#FFCCFF'];
+         l1 = board.create('line',[p1,p2],{straightFirst:false,straightLast:false,strokeColor:colors[level%6],name:'',withLabel:false});
+         l2 = board.create('line',[p2,p3],{straightFirst:false,straightLast:false,strokeColor:colors[level%6],name:'',withLabel:false});
+         l3 = board.create('line',[p3,p1],{straightFirst:false,straightLast:false,strokeColor:colors[level%6],name:'',withLabel:false});
+     }
+     function drawTriangle(a, b, c, level) {
+         if (level==0) return;
+         level -= 1;
+         // In das übergebene Dreieck, wird ein auf dem Kopf stehendes Dreieck eingefügt
+         var xCoords = [c.x, (c.x+b.x)/2, (a.x+c.x)/2];
+         var yCoords = [b.y, (c.y+a.y)/2, (c.y+a.y)/2];
+         drawPolygon(xCoords, yCoords,level);
+         // 3 neue Dreiecke bestimmen
+         a1 = a;
+         b1 = {x:c.x, y:b.y};
+         c1 = {x:(a.x+c.x)/2, y:(c.y+a.y)/2};
+         drawTriangle(a1, b1, c1, level);
+         a2 = {x:c.x, y:b.y};
+         b2 = b;
+         c2 = {x:(c.x+b.x)/2, y:(c.y+a.y)/2};
+         drawTriangle(a2, b2, c2, level);
+         a3 = {x:(a.x+c.x)/2, y:(c.y+a.y)/2};
+         b3 = {x:(c.x+b.x)/2, y:(c.y+a.y)/2};
+         c3 = c;
+         drawTriangle(a3, b3, c3, level);
+     }
+     paint();
+</script>
