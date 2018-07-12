@@ -34,6 +34,6 @@ link2: https://jsxgraph.org/wiki/index.php/Sierpinski_triangle
 {% include carouseltest.html %}
 
 ### JSXcompressor
-* JSXGraph [contains utilities to read files](jsxcompressor/index.html) which have been compressed by the ZLIB (http://zlib.org) library
+* JSXGraph [contains utilities to read files](jsxcompressor/index.html) which have been compressed by the ZLIB [(http://zlib.org)](http://zlib.org) library
 * pure JavaScript implementation to deflate, unzip and base64_decode
 * Delivery of compressed JavaScript inside of an HTML file
