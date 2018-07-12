@@ -298,45 +298,21 @@ var brd2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1
            drawTriangle(a3, b3, c3, level);
        }
        paint();
-</script>
+     </script>
 
 
 <script type="text/javascript">
-     var brd3 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-6, 6, 10, -8]});
+var brd3 = JXG.JSXGraph.initBoard('box3', {axis:true, boundingbox: [-6, 3, 8, -3]});
      brd3.suspendUpdate();
-     var S = brd3.create('slider', [[-5,-6],[5,-6],[0,0.95,1]], {name:'S'});
-     var hue = brd3.create('slider', [[-5,-7],[5,-7],[0,8,36]], {name:'color'});
-     var points = new Array();
-     points[0] = brd3.create('point',[5, 5], {name:' '});
-     points[1] = brd3.create('point',[-5, 5], {name:' '});
-     points[2] = brd3.create('point',[-5, -5], {name:' '});
-     points[3] = brd3.create('point',[5, -5], {name:' '});
-
-     function quadrangle(pt, n) {
-         var col;
-         var arr = new Array();
-         for(var i = 0; i < 4; i++) {
-             arr[i] = brd3.create('point',
-                 [function(t) {
-                     return function () {var x = pt[t].X();
-                                     var x1 = pt[(t+1)%4].X();
-                                     var s = S.Value();
-                                     return x+(x1-x)*s;
-                              }}(i),
-                  function(t) {
-                     return function () {var y = pt[t].Y();
-                                     var y1 = pt[(t+1)%4].Y();
-                                     var s = S.Value();
-                                     return y+(y1-y)*s;
-                              }}(i)
-                 ],
-                 {size:1, name:"",withLabel:false,visible:false});
+     brd3.create('functiongraph', [function(t){ return Math.sin(t); }, -10, 10],{strokeColor: "#cccccc"});
+     var s2 = brd3.create('slider', [[0.75,-1.5],[5.75,-1.5],[0,0,10]], {name:'T',snapWidth:1});
+     brd3.create('functiongraph', [
+       function(t) {
+         var val = 0, i, sv = s2.Value()+1;
+         for(i = 0; i < sv; i++) {
+          val = val + Math.pow(-1, i) * Math.pow(t, 2 * i + 1) / JXG.Math.factorial(2*i+1);
          }
-         col =  function(){return JXG.hsv2rgb(hue.Value()*n,0.7,0.9);};
-         brd3.create('polygon',pt, {fillColor:col});
-         if(n>0)
-             quadrangle(arr, --n);
-        }
-     quadrangle(points,30);
+         return val;
+       }, -10, 10],{strokeColor: "#009900"});
      brd3.unsuspendUpdate();
      </script>
