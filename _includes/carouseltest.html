@@ -6,7 +6,7 @@
     <div class="item active">
       <div>
         <div class="myitem">
-        	<div id='box3' class="jxgbox" style="width:95%; height:500px; margin:auto;"></div>
+        	<div id='box1' class="jxgbox" style="width:95%; height:500px; margin:auto;"></div>
         </div>
 
         <div class="noheight">
@@ -170,16 +170,16 @@ brd1.create('text',[-6,-3,function(){ return 'Sum='+(JXG.Math.Numerics.riemannsu
 
 
 <script type="text/javascript">
-board = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
+var brd2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
 
        var level = 0;
        function run() {
-           JXG.JSXGraph.freeBoard(board);
-           board = JXG.JSXGraph.initBoard('box', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
+           JXG.JSXGraph.freeBoard(brd2);
+           brd2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
            level++;
-           board.suspendUpdate();
+           brd2.suspendUpdate();
             paint();
-           board.unsuspendUpdate();
+           brd2.unsuspendUpdate();
        }
 
        function paint() {
@@ -191,13 +191,13 @@ board = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.02
        }
 
        function drawPolygon(xCoords, yCoords,level) {
-           p1 = board.create('point', [xCoords[0], yCoords[0]], {visible:false,name:'',withLabel:false});
-           p2 = board.create('point', [xCoords[1], yCoords[1]], {visible:false,name:'',withLabel:false});
-           p3 = board.create('point', [xCoords[2], yCoords[2]], {visible:false,name:'',withLabel:false});
+           p1 = brd2.create('point', [xCoords[0], yCoords[0]], {visible:false,name:'',withLabel:false});
+           p2 = brd2.create('point', [xCoords[1], yCoords[1]], {visible:false,name:'',withLabel:false});
+           p3 = brd2.create('point', [xCoords[2], yCoords[2]], {visible:false,name:'',withLabel:false});
            var colors=['#000000','#665566','#994499','#BB33BB','#EE99FF','#FFCCFF'];
-           l1 = board.create('line',[p1,p2],{straightFirst:false,straightLast:false,strokeColor:colors[level%6],name:'',withLabel:false});
-           l2 = board.create('line',[p2,p3],{straightFirst:false,straightLast:false,strokeColor:colors[level%6],name:'',withLabel:false});
-           l3 = board.create('line',[p3,p1],{straightFirst:false,straightLast:false,strokeColor:colors[level%6],name:'',withLabel:false});
+           l1 = brd2.create('line',[p1,p2],{straightFirst:false,straightLast:false,strokeColor:colors[level%6],name:'',withLabel:false});
+           l2 = brd2.create('line',[p2,p3],{straightFirst:false,straightLast:false,strokeColor:colors[level%6],name:'',withLabel:false});
+           l3 = brd2.create('line',[p3,p1],{straightFirst:false,straightLast:false,strokeColor:colors[level%6],name:'',withLabel:false});
        }
 
        function drawTriangle(a, b, c, level) {
