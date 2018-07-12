@@ -238,7 +238,7 @@ var os = brd1.create('riemannsum',[f,
 
 brd1.create('text',[-6,-3,function(){ return 'Sum='+(JXG.Math.Numerics.riemannsum(f,s.Value(),"left".value,a.Value(),b.Value())).toFixed(4); }]);
 
-/*var brd2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
+var brd2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1.0263157894736843, 1.2894736842105263, -0.02631578947368421]});
 
        var level = 0;
        function run() {
@@ -294,7 +294,7 @@ brd1.create('text',[-6,-3,function(){ return 'Sum='+(JXG.Math.Numerics.riemannsu
            c3 = c;
            drawTriangle(a3, b3, c3, level);
        }
-       paint();*/
+       paint();
 
 var board2 = JXG.JSXGraph.initBoard('box3', {axis:true, boundingbox: [-6, 3, 8, -3]});
 board2.suspendUpdate();
