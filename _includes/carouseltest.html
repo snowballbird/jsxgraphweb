@@ -122,77 +122,6 @@ brd2.unsuspendUpdate();
       </div>
     </div>
 
-    <!--example 3-->
-        <div class="item">
-          <div>
-            <div class="myitem">
-              <div id='box3' class='jxgbox' style='width:95%; height:500px; margin:auto;'></div>
-
-            </div>
-
-            <div class="noheight">
-              <a href="{{ page.link2 }}">
-                <h1>{{ page.title2 }}</h1>
-              </a>
-              <button onclick="hideshow3()">Show / Hide Code</button>
-              <br>
-
-                <div id="examplecode3" class="noheight nopadding" style="display:none">
-    {% highlight js %}
-    var brd2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-6, 6, 10, -8]});
-    brd2.suspendUpdate();
-    var S = brd2.create('slider', [[-5,-6],[5,-6],[0,0.95,1]], {name:'S'});
-    var hue = brd2.create('slider', [[-5,-7],[5,-7],[0,8,36]], {name:'color'});
-    var points = new Array();
-    points[0] = brd2.create('point',[5, 5], {name:' '});
-    points[1] = brd2.create('point',[-5, 5], {name:' '});
-    points[2] = brd2.create('point',[-5, -5], {name:' '});
-    points[3] = brd2.create('point',[5, -5], {name:' '});
-
-    function quadrangle(pt, n) {
-        var col;
-        var arr = new Array();
-        for(var i = 0; i < 4; i++) {
-            arr[i] = brd2.create('point',
-                [function(t) {
-                    return function () {var x = pt[t].X();
-                                    var x1 = pt[(t+1)%4].X();
-                                    var s = S.Value();
-                                    return x+(x1-x)*s;
-                             }}(i),
-                 function(t) {
-                    return function () {var y = pt[t].Y();
-                                    var y1 = pt[(t+1)%4].Y();
-                                    var s = S.Value();
-                                    return y+(y1-y)*s;
-                             }}(i)
-                ],
-                {size:1, name:"",withLabel:false,visible:false});
-        }
-        col =  function(){return JXG.hsv2rgb(hue.Value()*n,0.7,0.9);};
-        brd2.create('polygon',pt, {fillColor:col});
-        if(n>0)
-            quadrangle(arr, --n);
-       }
-    quadrangle(points,30);
-    brd2.unsuspendUpdate();
-    {% endhighlight %}
-
-                </div>
-                <script type='text/javascript'>
-                function hideshow3() {
-                  var x = document.getElementById("examplecode3");
-                  if (x.style.display === "none") {
-                      x.style.display = "block";
-                  } else {
-                      x.style.display = "none";
-                  }
-                }
-                </script>
-              </div>
-          </div>
-        </div>
-
 
 
 
@@ -298,21 +227,4 @@ var brd2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1
            drawTriangle(a3, b3, c3, level);
        }
        paint();
-     </script>
-
-
-     <script type="text/javascript">
-     var brd3 = JXG.JSXGraph.initBoard('box3', {axis:true, boundingbox: [-6, 3, 8, -3]});
-     brd3.suspendUpdate();
-     brd3.create('functiongraph', [function(t){ return Math.sin(t); }, -10, 10],{strokeColor: "#cccccc"});
-     var s2 = brd3.create('slider', [[0.75,-1.5],[5.75,-1.5],[0,0,10]], {name:'T',snapWidth:1});
-     brd3.create('functiongraph', [
-       function(t) {
-         var val = 0, i, sv = s2.Value()+1;
-         for(i = 0; i < sv; i++) {
-          val = val + Math.pow(-1, i) * Math.pow(t, 2 * i + 1) / JXG.Math.factorial(2*i+1);
-         }
-         return val;
-       }, -10, 10],{strokeColor: "#009900"});
-     brd3.unsuspendUpdate();
      </script>
