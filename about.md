@@ -33,7 +33,7 @@ link3: https://jsxgraph.org/wiki/index.php/Power_Series_for_sine_and_cosine
 * <a href="/wiki/index.php/Category:Examples">All examples in the JSXGraph-Wiki</a>
 * JSXGraph is the basis of [sketchometry](//sketchometry.org). (Our attempt on dynamic geometry software)
 
-{% include carousel.html %}
+{% include carouseltest.html %}
 
 ### JSXcompressor
 * JSXGraph contains [utilities to read files](jsxcompressor/index.html) which have been compressed by the ZLIB (http://zlib.org) library
