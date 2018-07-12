@@ -196,7 +196,7 @@ brd2.unsuspendUpdate();
 
 
 
-  </div>
+  </div> <!--carousel inner-->
 
   <!-- Left and right controls -->
   <div style="position:absolute;top:275px;right: 93%;">
@@ -215,8 +215,8 @@ brd2.unsuspendUpdate();
       <i class="fa fa-arrow-right fa-stack-1x fa-inverse" style="color:white;"></i>
     </span>
   </a>
-
 </div>
+
 </div>
 
 
@@ -301,8 +301,8 @@ var brd2 = JXG.JSXGraph.initBoard('box2', {boundingbox: [-0.02631578947368421, 1
      </script>
 
 
-     <script type="text/javascript">
-     var brd3 = JXG.JSXGraph.initBoard('box3', {axis:true, boundingbox: [-6, 3, 8, -3]});
+<script type="text/javascript">
+var brd3 = JXG.JSXGraph.initBoard('box3', {axis:true, boundingbox: [-6, 3, 8, -3]});
      brd3.suspendUpdate();
      brd3.create('functiongraph', [function(t){ return Math.sin(t); }, -10, 10],{strokeColor: "#cccccc"});
      var s2 = brd3.create('slider', [[0.75,-1.5],[5.75,-1.5],[0,0,10]], {name:'T',snapWidth:1});
